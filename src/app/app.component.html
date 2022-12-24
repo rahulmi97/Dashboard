@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="heading">Construction detail dashboard</div>
+  <div class="list-container-with-button">
+    <button
+    type="button"
+    mat-raised-button
+    (click)="$event.stopPropagation(); addData()"
+    >
+    <span class="button-name">
+        {{ 'Add Deatails' }}
+    </span>
+    </button>
+
+    <div class="table-container">
+    <app-detail-list [listData]="tableData" (updatedListData)="updatedListData($event)"></app-detail-list>
+    </div>
+  </div>
+
+</div>

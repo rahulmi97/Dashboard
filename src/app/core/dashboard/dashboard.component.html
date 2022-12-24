@@ -1,0 +1,37 @@
+<div class="page-container">
+    <div class="form-container">
+      <span class="text">Cunstaruction Detail Dashboard</span>
+      <form action="" [formGroup]="formGroup">
+        <div class="project-name-conrainer">
+          <mat-form-field appearance="outline">
+            <mat-label>Enter  Project Name</mat-label>
+            <input matInput type="text" placeholder="Enter  Project Name" [formControlName]="'projectName'">
+            <mat-error *ngIf="formGroup.get('projectName').invalid">{{getProjectNameValidator()}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="percentage-conrainer">
+          <mat-form-field appearance="outline">
+            <mat-label>Enter completion percentage</mat-label>
+            <input matInput type="number" placeholder="Enter completion percentage" [formControlName]="'completion'">
+            <mat-error *ngIf="formGroup.get('completion').invalid">{{getPercentageError()}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="manager-name-conrainer">
+          <mat-form-field appearance="outline">
+            <mat-label>Enter Manager Name</mat-label>
+            <input matInput type="text" placeholder="Enter Manager Name" [formControlName]="'managerName'">
+            <mat-error *ngIf="formGroup.get('managerName').invalid">{{'Manager name is required.'}}</mat-error>
+          </mat-form-field>
+        </div>
+      </form>
+      <button
+          type="button"
+          mat-raised-button
+          (click)="$event.stopPropagation(); getSiteDeatails()"
+      >
+          <span class="button-name">
+              {{ 'Add Deatails' }}
+          </span>
+      </button>
+    </div>
+  </div>
